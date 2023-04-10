@@ -86,6 +86,18 @@ require('nvim-tree').setup {
     },
     number = false,
     relativenumber = false,
-    signcolumn = 'yes'
+    signcolumn = 'yes',
+    float = {
+      enable = true,
+      quit_on_focus_loss = true,
+      open_win_config = {
+        relative = "editor",
+        border = "double",
+        width = 50,
+        height = 30,
+        row = 1,
+        col = 3,
+      },
+    }
   }
 }

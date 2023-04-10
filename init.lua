@@ -198,7 +198,7 @@ vim.cmd.colorscheme 'embark'
 vim.o.hlsearch = true
 
 -- Make line numbers default
-vim.wo.number = true
+vim.wo.number = false
 
 -- Enable mouse mode
 vim.o.mouse = 'a'

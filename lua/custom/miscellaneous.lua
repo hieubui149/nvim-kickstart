@@ -35,7 +35,7 @@ vim.opt.cursorline = true
 vim.opt.smartindent = true
 vim.opt.foldmethod = 'indent'
 vim.opt.foldlevelstart = 20
-vim.opt.fillchars = { eob = '•' ,fold = ' ' ,vert = '⏽' }
+vim.opt.fillchars = { eob = ' ' ,fold = ' ' ,vert = '⏽' }
 
 vim.g.nopaste = true
 vim.g.linespace = 1
@@ -43,6 +43,12 @@ vim.g.nopaste = true
 vim.g.ruler = true
 
 -- [[ Configure lazygit ]]
+vim.g.lazygit_floating_window_winblend = 0 -- transparency of floating window
+vim.g.lazygit_floating_window_scaling_factor = 0.9 -- scaling factor for floating window
+-- vim.g.lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] -- customize lazygit popup window corner characters
+vim.g.lazygit_floating_window_use_plenary = 0 -- use plenary.nvim to manage floating window if available
+vim.g.lazygit_use_neovim_remote = 0 -- fallback to 0 if neovim-remote is not installed
+
 vim.keymap.set('n', '<leader>lg', ':LazyGit<CR>', { desc = 'Open [L]azy[G]it' })
 vim.keymap.set('n', '<leader>lgc', ':LazyGitConfig<CR>', { desc = 'Open [L]azy[G]it [C]onfig' })
 
@@ -76,9 +82,14 @@ vim.keymap.set('n', 'Zo', "<c-w>=", { desc = '[Z]oom [O]ut' })
 vim.keymap.set('n', '<c-e>', 'A<ESC>', { desc = '[J]ump to the end of line' })
 vim.keymap.set('n', '<c-i>', 'I<ESC>', { desc = '[J]ump to the start of line' })
 vim.keymap.set('n', '<CR>', '<ESC>:noh<CR>', { desc = 'Clear console', silent = true })
+-- Configure quick switch buffer format
 vim.keymap.set('n', '<S-f><S-r>', ':set ft=ruby<ESC>', { desc = '[F]ormat [R]uby current buffer' })
 vim.keymap.set('n', '<S-f><S-j>', ':set ft=json<ESC>', { desc = '[F]ormat [J]ON current buffer' })
 vim.keymap.set('n', '<S-f><S-m>', ':set ft=markdown<ESC>', { desc = '[F]ormat [M]arkdown current buffer' })
+-- Configure quick show/hide line number
+vim.keymap.set('n', '<c-l><c-l>', ':set invrelativenumber<CR>', { desc = 'Show [L]ine Inv Relative Number' })
+vim.keymap.set('n', '<c-l><c-n>', ':set number<CR>', { desc = 'Show [L]ine [N]umber' })
+vim.keymap.set('n', '<c-l><c-o>', ':set nonumber<CR>', { desc = 'Hide [L]ine Number' })
 
 -- Vim config easy access
 vim.keymap.set('n', '<c-v><c-o>', ':vnew ~/.config/nvim/init.lua<CR>', { desc = 'Open n[V]im config in vertical pane' })
