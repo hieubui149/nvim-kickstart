@@ -36,11 +36,14 @@ vim.opt.smartindent = true
 vim.opt.foldmethod = 'indent'
 vim.opt.foldlevelstart = 20
 vim.opt.fillchars = { eob = ' ' ,fold = ' ' ,vert = '⏽' }
+vim.opt.autoindent = true
 
 vim.g.nopaste = true
 vim.g.linespace = 1
 vim.g.nopaste = true
 vim.g.ruler = true
+
+vim.api.nvim_command('filetype plugin indent on')
 
 -- [[ Configure lazygit ]]
 vim.g.lazygit_floating_window_winblend = 0 -- transparency of floating window
