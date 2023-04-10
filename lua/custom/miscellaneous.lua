@@ -42,8 +42,6 @@ vim.g.linespace = 1
 vim.g.nopaste = true
 vim.g.ruler = true
 
-vim.cmd('set clipboard+=unnamedplus')
-
 -- [[ Configure lazygit ]]
 vim.keymap.set('n', '<leader>lg', ':LazyGit<CR>', { desc = 'Open [L]azy[G]it' })
 vim.keymap.set('n', '<leader>lgc', ':LazyGitConfig<CR>', { desc = 'Open [L]azy[G]it [C]onfig' })
@@ -72,7 +70,7 @@ vim.keymap.set('n', '<S-j>n', 'i<CR><ESC>', { desc = 'Break cursor to a new line
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Keeping centered' })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Keeping centered' })
 vim.keymap.set('n', '<S-j>', 'mzJ`z', { desc = 'Keeping centered' })
-vim.keymap.set('n', '<leader><leader>', '<c-^>', { desc = 'Switch between the last two buffers' })
+vim.keymap.set('n', '<leader>\\', '<c-^>', { desc = 'Switch between the last two buffers' })
 vim.keymap.set('n', 'Zz', "<c-w>|", { desc = '[Z]oom In' })
 vim.keymap.set('n', 'Zo', "<c-w>=", { desc = '[Z]oom [O]ut' })
 vim.keymap.set('n', '<c-e>', 'A<ESC>', { desc = '[J]ump to the end of line' })
@@ -81,3 +79,7 @@ vim.keymap.set('n', '<CR>', '<ESC>:noh<CR>', { desc = 'Clear console', silent = 
 vim.keymap.set('n', '<S-f><S-r>', ':set ft=ruby<ESC>', { desc = '[F]ormat [R]uby current buffer' })
 vim.keymap.set('n', '<S-f><S-j>', ':set ft=json<ESC>', { desc = '[F]ormat [J]ON current buffer' })
 vim.keymap.set('n', '<S-f><S-m>', ':set ft=markdown<ESC>', { desc = '[F]ormat [M]arkdown current buffer' })
+
+-- Vim config easy access
+vim.keymap.set('n', '<c-v><c-o>', ':vnew ~/.config/nvim/init.lua<CR>', { desc = 'Open n[V]im config in vertical pane' })
+vim.keymap.set('n', '<c-v><c-i>', ':source ~/.config/nvim/init.lua<CR>', { desc = 'Reload n[V]im config in vertical pane' })
