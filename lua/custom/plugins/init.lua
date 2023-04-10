@@ -43,4 +43,12 @@ return {
 
   -- Renamer
   { 'filipdutescu/renamer.nvim', branch = 'master', requires = { {'nvim-lua/plenary.nvim'} } },
+
+  -- Nvim movement in one go
+  { 'booperlv/nvim-gomove', opts = {
+    map_defaults = false,
+    reindent = true,
+    undojoin = true,
+    move_past_end_col = false,
+  } }
 }

@@ -393,8 +393,8 @@ local on_attach = function(_, bufnr)
   nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
   -- See `:help K` for why this keymap
-  nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+  nmap('D', vim.lsp.buf.hover, 'Hover Documentation')
+  -- nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
@@ -507,6 +507,9 @@ require('custom/nvim-tree')
 
 -- [[ Configure Github Copilot ]]
 require('custom/github-copilot')
+
+-- [[ Configure nvim-gomove ]]
+require('custom/nvim-gomove')
 
 -- [[ Configure Miscellaneous ]]
 require('custom/miscellaneous')
