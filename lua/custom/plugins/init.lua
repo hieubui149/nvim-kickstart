@@ -42,7 +42,7 @@ return {
   { 'github/copilot.vim' },
 
   -- Renamer
-  { 'filipdutescu/renamer.nvim', branch = 'master', requires = { {'nvim-lua/plenary.nvim'} } },
+  -- { 'filipdutescu/renamer.nvim', branch = 'master', requires = { {'nvim-lua/plenary.nvim'} } },
 
   -- Nvim movement in one go
   { 'booperlv/nvim-gomove', opts = {
@@ -50,5 +50,8 @@ return {
     reindent = true,
     undojoin = true,
     move_past_end_col = false,
-  } }
+  } },
+
+  -- Coc nvim
+  { 'neoclide/coc.nvim', branch = 'release' }
 }
