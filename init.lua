@@ -106,7 +106,7 @@ require('lazy').setup({
         add = { text = '+' },
         change = { text = '~' },
         delete = { text = '_' },
-        topdelete = { text = '‾' },
+        topdelete = { text = '-' },
         changedelete = { text = '~' },
       },
     },
@@ -126,9 +126,9 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
-        component_separators = '|',
-        section_separators = '',
+        theme = 'nord',
+        -- component_separators = '|',
+        -- section_separators = '',
       },
     },
   },
@@ -137,10 +137,10 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
+    -- opts = {
+    --   char = '┊',
+    --   show_trailing_blankline_indent = false,
+    -- },
   },
 
   -- "gc" to comment visual regions/lines
@@ -242,8 +242,8 @@ vim.wo.wrap = false
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -394,7 +394,7 @@ local on_attach = function(_, bufnr)
   nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
   -- See `:help K` for why this keymap
-  nmap('D', vim.lsp.buf.hover, 'Hover Documentation')
+  nmap('<leader>hd', vim.lsp.buf.hover, 'Hover Documentation')
   -- nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Lesser used LSP functionality
@@ -478,24 +478,24 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
+    -- ['<Tab>'] = cmp.mapping(function(fallback)
+    --   if cmp.visible() then
+    --     cmp.select_next_item()
+    --   elseif luasnip.expand_or_jumpable() then
+    --     luasnip.expand_or_jump()
+    --   else
+    --     fallback()
+    --   end
+    -- end, { 'i', 's' }),
+    -- ['<S-Tab>'] = cmp.mapping(function(fallback)
+    --   if cmp.visible() then
+    --     cmp.select_prev_item()
+    --   elseif luasnip.jumpable(-1) then
+    --     luasnip.jump(-1)
+    --   else
+    --     fallback()
+    --   end
+    -- end, { 'i', 's' }),
   },
   sources = {
     { name = 'nvim_lsp' },
@@ -514,6 +514,18 @@ require('custom/nvim-gomove')
 
 -- [[ Configure coc.nvim ]]
 require('custom/coc-nvim')
+
+-- [[ Configure winshift ]]
+require('custom/winshift')
+
+-- [[ Configure lualine ]]
+-- require('custom/lualine')
+
+-- [[ Configure indent-blankline ]]
+require('custom/indent-blankline')
+
+-- [[ Configure registers ]]
+require('custom/registers')
 
 -- [[ Configure Miscellaneous ]]
 require('custom/miscellaneous')

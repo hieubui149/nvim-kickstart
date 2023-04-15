@@ -35,9 +35,6 @@ return {
   -- Highlight word at cursor
   { 'itchyny/vim-cursorword' },
 
-  -- Vim windows movement
-  { 'sindrets/winshift.nvim' },
-
   -- Github Copilot
   { 'github/copilot.vim' },
 
@@ -53,5 +50,25 @@ return {
   } },
 
   -- Coc nvim
-  { 'neoclide/coc.nvim', branch = 'release' }
+  { 'neoclide/coc.nvim', branch = 'release' },
+
+  -- Winshift
+  { 'sindrets/winshift.nvim', opts = {
+    highlight_moving_win = true,  -- Highlight the window being moved
+    moving_win_options = {
+      wrap = false,
+      cursorline = true,
+      cursorcolumn = true,
+      colorcolumn = "",
+    }
+  } },
+  {
+    "tversteeg/registers.nvim",
+    name = "registers",
+    keys = {
+      { "\"",    mode = { "n", "v" } },
+      { "<C-R>", mode = "i" }
+    },
+    cmd = "Registers",
+  }
 }
