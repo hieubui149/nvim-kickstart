@@ -28,6 +28,7 @@ require("nvim-surround").setup()
 vim.g.move_key_modifier = 'C'
 
 --
+vim.opt.relativenumber = true
 vim.opt.colorcolumn = '80'
 vim.opt.encoding = 'utf8'
 vim.opt.confirm = true
@@ -35,9 +36,9 @@ vim.opt.cursorline = true
 vim.opt.foldmethod = 'indent'
 vim.opt.foldlevelstart = 20
 vim.opt.fillchars = { eob = ' ' ,fold = ' ' ,vert = '⏽' }
--- vim.opt.autoindent = true
--- vim.opt.breakindent = true
--- vim.opt.smartindent = true
+vim.opt.autoindent = true
+vim.opt.breakindent = true
+vim.opt.smartindent = true
 
 vim.g.nopaste = true
 vim.g.linespace = 1
@@ -52,6 +53,7 @@ vim.g.ruler = true
 -- [[ Configure space stop by language ]]
 autocmd('Filetype', { pattern = 'python', command = 'setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4' })
 autocmd('Filetype', { pattern = 'sql', command = 'setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4' })
+autocmd('Filetype', { pattern = 'lua', command = 'setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2' })
 autocmd('Filetype', { pattern = 'typescript', command = 'setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 formatprg=prettier\\ --parser\\ typescript' })
 autocmd('Filetype', { pattern = 'typescript.tsx', command = 'setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2 formatprg=prettier\\ --parser\\ typescript' })
 
@@ -116,4 +118,3 @@ vim.keymap.set('n', '<c-v><c-i>', ':source ~/.config/nvim/init.lua<CR>', { desc 
 -- Vim surround quick access
 vim.keymap.set('n', '<leader>\'', 'cs\'"', { desc = 'Convert single quote to double quote' })
 vim.keymap.set('n', '<leader>"', 'cs"\'', { desc = 'Convert double quote to single quote' })
-

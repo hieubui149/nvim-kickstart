@@ -70,5 +70,17 @@ return {
       { "<C-R>", mode = "i" }
     },
     cmd = "Registers",
-  }
+  },
+
+  -- Vim movement + motion with brackets
+  { 'echasnovski/mini.bracketed', version = '*' },
+  { 'echasnovski/mini.animate', version = '*' },
+  { 'echasnovski/mini.indentscope', version = '*' },
+
+  { "RutaTang/quicknote.nvim", config={
+    mode = "resident"
+  }, dependencies = { "nvim-lua/plenary.nvim"} },
+
+  -- Harpoon for marks
+  { 'ThePrimeagen/harpoon', opts = {}, dependencies = { "nvim-lua/plenary.nvim"} },
 }

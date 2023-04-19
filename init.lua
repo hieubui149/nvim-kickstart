@@ -198,7 +198,7 @@ vim.cmd.colorscheme 'embark'
 vim.o.hlsearch = true
 
 -- Make line numbers default
-vim.wo.number = false
+vim.wo.number = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -526,6 +526,15 @@ require('custom/indent-blankline')
 
 -- [[ Configure registers ]]
 require('custom/registers')
+
+-- [[ Configure mini ]]
+require('custom/mini')
+
+-- [[ Configure quick note ]]
+require('custom/quick-note')
+
+-- [[ Configure quick note ]]
+require('custom/harpoon')
 
 -- [[ Configure Miscellaneous ]]
 require('custom/miscellaneous')
