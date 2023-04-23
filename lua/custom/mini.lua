@@ -1,6 +1,9 @@
 -- [[ Configure Mini Packages ]]
 require('mini.bracketed').setup()
 require('mini.animate').setup({
+  scroll = {
+    enable = false,
+  },
   resize = {
     enable = false,
   },
