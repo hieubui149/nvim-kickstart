@@ -83,4 +83,6 @@ return {
 
   -- Harpoon for marks
   { 'ThePrimeagen/harpoon', opts = {}, dependencies = { "nvim-lua/plenary.nvim"} },
+
+  { 'VonHeikemen/fine-cmdline.nvim', dependencies = {'MunifTanjim/nui.nvim'} },
 }

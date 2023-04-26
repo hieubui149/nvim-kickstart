@@ -135,12 +135,6 @@ require('lazy').setup({
 
   { -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    -- opts = {
-    --   char = '┊',
-    --   show_trailing_blankline_indent = false,
-    -- },
   },
 
   -- "gc" to comment visual regions/lines
@@ -533,8 +527,11 @@ require('custom/mini')
 -- [[ Configure quick note ]]
 require('custom/quick-note')
 
--- [[ Configure quick note ]]
+-- [[ Configure harpoon ]]
 require('custom/harpoon')
+
+-- [[ Configure fine cmd line ]]
+require('custom/fine-cmdline')
 
 -- [[ Configure Miscellaneous ]]
 require('custom/miscellaneous')

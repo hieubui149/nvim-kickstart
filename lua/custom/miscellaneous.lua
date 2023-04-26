@@ -39,6 +39,8 @@ vim.opt.fillchars = { eob = ' ' ,fold = ' ' ,vert = '⏽' }
 vim.opt.autoindent = true
 vim.opt.breakindent = true
 vim.opt.smartindent = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 vim.g.nopaste = true
 vim.g.linespace = 1
