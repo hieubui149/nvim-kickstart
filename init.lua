@@ -530,8 +530,8 @@ require('custom/quick-note')
 -- [[ Configure harpoon ]]
 require('custom/harpoon')
 
--- [[ Configure fine cmd line ]]
-require('custom/fine-cmdline')
+-- [[ Configure noice ]]
+require('custom/noice')
 
 -- [[ Configure Miscellaneous ]]
 require('custom/miscellaneous')

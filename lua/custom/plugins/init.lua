@@ -84,5 +84,11 @@ return {
   -- Harpoon for marks
   { 'ThePrimeagen/harpoon', opts = {}, dependencies = { "nvim-lua/plenary.nvim"} },
 
-  { 'VonHeikemen/fine-cmdline.nvim', dependencies = {'MunifTanjim/nui.nvim'} },
+  {
+    "folke/noice.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  }
 }
